@@ -5,12 +5,14 @@
  */
 package javapoo.client.app;
 
+import static javapoo.app.util.UIMenu.*;
+
 /**
  *
  * @author PC
  */
 public class Client {
     public static void main(String[] args) {
-        
+        showMenu();
     }
 }

@@ -10,11 +10,31 @@ package javapoo.app.entities;
  * @author PC
  */
 public class Doctor {
-    int id;
-    String name;
-    String speciality;
+    public static int id = 0; //autoincrement
+    public String name;
+    public String speciality;
+    
+    public Doctor()
+    {
+        System.out.println("Se ha construido el objeto Doctor: ");
+        id++;
+    }
+    
+    public Doctor(String name)
+    {
+        System.out.println("Se ha construido el objeto Doctor: " + name);
+        this.name = name;
+    }
     
     public void showName()
     {
+        System.out.println("Doctor name: " + name);
     }
+    
+    public void showDoctorId()
+    {
+        System.out.println("ID Doctor: " + id);
+    }
+    
+    
 }
