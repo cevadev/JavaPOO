@@ -17,13 +17,15 @@ public class Doctor {
     public Doctor()
     {
         System.out.println("Se ha construido el objeto Doctor: ");
-        id++;
+        
     }
     
-    public Doctor(String name)
+    public Doctor(String name, String speciality)
     {
-        System.out.println("Se ha construido el objeto Doctor: " + name);
+        id++;
         this.name = name;
+        this.speciality = speciality;
+        System.out.println("Se ha construido el objeto Doctor: " + name);
     }
     
     public void showName()
