@@ -17,7 +17,8 @@ import static javapoo.app.util.UIMenu.*;
  */
 public class Client {
     public static void main(String[] args) {
-        
+        showMenu();
+        /*
         User user = new Doctor("Juan Jose Mendez", "jmendez@sanfelipe.com.ar", "Oncologia");
         user.showUserData();
         
@@ -30,6 +31,8 @@ public class Client {
             }
         };
         user1.showUserData();
+        */
+        
         //showMenu();
         /*
         Patient patient = new Patient("Alejandra", "alejandra@gmail.com");

@@ -5,8 +5,12 @@
  */
 package javapoo.app.entities;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -33,7 +37,7 @@ public class Doctor extends User{
         System.out.println("ID Doctor: " +super.getId());
     }
     
-    public void addAvalableAppoinment(Date date, String time)
+    public void addAvalableAppoinment(String date, String time)
     {
         availableAppointments.add(new Doctor.AvailableAppointment(date, time));
     }
@@ -68,10 +72,18 @@ public class Doctor extends User{
         private Date date;
         private String time;
         
-        public AvailableAppointment(Date date, String time)
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        
+        public AvailableAppointment(String date, String time)
         {
-            this.date = date;
             this.time = time;
+            try 
+            {
+                this.date = format.parse(date);
+            } 
+            catch (ParseException ex) {
+                Logger.getLogger(Doctor.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
         public int getId_availableAppoinment() {
@@ -82,8 +94,13 @@ public class Doctor extends User{
             this.id_availableAppoinment = id_availableAppoinment;
         }
 
-        public Date getDate() {
+        public Date getDate(String DATE) {
             return date;
+        }
+        
+        public String getDateStr()
+        {
+            return format.format(date);
         }
 
         public void setDate(Date date) {
